@@ -44,7 +44,7 @@
 export default {
   data() {
     return {
-      binaryQuestion: '01000110 01110010 01100001 01101110 01101011 00101101 01010011 01101111 00101101 01000110 01110101 01100011 01101011 01101011 01101001 01101110 01100111 00101101 01001000 01100001 01101110 01100100 01110011 01101111 01101101 01100101 00101101 01100010 01110010 01101001 01101110 01100111 00101101 01100001 00101101 01100001 01101110 01110011 01110111 01100101',
+      binaryQuestion: '01100110 01110010 01100001 01101110 01101011 01110011 01101111 01100110 01110101 01100011 01101011 01101011 01101001 01101110 01100111 01101000 01100001 01101110 01100100 01110011 01101111 01101101 01100101',
       binaryInput: '',
       convertedText: '',
       isCorrect: false,
@@ -62,8 +62,11 @@ export default {
     convertBinary() {
       try {
         const correctAnswer = 'franksoFuckkingHandsomebringaanswer'
+        
+        // Trim and split input, handle potential whitespace variations
         const binaryArray = this.binaryInput.trim().split(/\s+/)
         
+        // Convert binary to text
         this.convertedText = binaryArray
           .map(bin => String.fromCharCode(parseInt(bin, 2)))
           .join('')
@@ -72,6 +75,7 @@ export default {
         const normalizedInput = this.normalizeString(this.convertedText)
         const normalizedCorrect = this.normalizeString(correctAnswer)
 
+        // Check if the normalized inputs match
         this.isCorrect = normalizedInput === normalizedCorrect
         this.isIncorrect = !this.isCorrect
 

@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     resultMessage() {
-      if (this.isCorrect) return 'เก่งมากเพื่อนแต่กุลงเด็กโชวืพอร์ตไปหมดแล้ว 🎉'
+      if (this.isCorrect) return 'เก่งมากเพื่อนแต่กุลงเด็กโชว์พอร์ตไปหมดแล้ว 🎉'
       if (this.isIncorrect) return 'ไรอะอ่อนๆๆๆ 🤔'
       return this.convertedText
     }
@@ -61,7 +61,7 @@ export default {
   methods: {
     convertBinary() {
       try {
-        const correctAnswer = 'แ'
+        const correctAnswer = 'franksoFuckkingHandsomebringaanswer'
         const binaryArray = this.binaryInput.trim().split(/\s+/)
         
         this.convertedText = binaryArray
